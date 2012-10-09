@@ -1,0 +1,439 @@
+body {
+	color: #333333;
+	background: #fefefe url(/images/background.png) repeat-y center;
+	font-family: Trebuchet MS, Sans-Serif;
+	font-size: 10pt;
+	text-align: center;
+}
+
+a:link {
+	color: #3778a3;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #3778A3;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #ff6a00;
+	text-decoration: none;
+}
+
+a img {
+	border-width: 0;
+}
+
+q, blockquote {
+	font-style: italic;
+	quotes: '\201C' '\201D' '\2018' '\2019';
+}
+
+q:before, blockquote:before {
+	content: open-quote;
+}
+
+q:after, blockquote:after {
+	content: close-quote;
+}
+
+h1 {
+	margin-top: 0;
+	padding-top: 1em;
+	font-family: Arial Black;
+	display: block;
+	font-size: 1.5em;
+}
+
+h2 {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-family: Arial Black;
+	display: block;
+	font-size: 1em;
+}
+
+form {
+	margin: 1em 0;
+}
+
+/* header
+----------------------------------------------- */
+
+#header, #header-slim {
+	background-image: url(/images/header.png);
+	border-top: 1px solid #aaaaaa;
+	border-bottom: 1px solid #aaaaaa;
+	margin: 0 auto;
+	padding: 0;
+	height: 211px;
+	width: 727px;
+}
+
+#header.slim {
+	background-image: url(../images/header-slim.png);
+	height: 80px;
+}
+
+#header a, #header a:hover, #header-slim a, #header-slim a:hover {
+	background: transparent none repad scroll 0%;
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+#header h1, #header h2, #header-slim h1, #header-slim h2 {
+	display: none;
+}
+
+/* navigation
+----------------------------------------------- */
+
+#navigation {
+	width: 727px;
+	height: auto;
+	padding: 0 auto;
+	padding-top: 1em;
+	padding-bottom: 2em;
+	margin: 0 auto;
+	border-bottom: 1px solid #aaaaaa;
+	text-align: left;
+	font-family: Arial Black;
+}
+
+#navigation a {
+	margin: 0 auto;
+	margin-left: 13px;
+	font-weight: bold;
+}
+
+#navigation ul, #sub-navigation {
+	clear: left;
+	height: 0;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	list-style-type: none;
+}
+
+#navigation li, #sub-navigation li {
+	float: left;
+}
+
+#navigation a:visited {
+	color: #3778a3;
+}
+
+#navigation a:hover {
+	color: #3778a3;
+	text-decoration: none;
+	border-bottom: solid 3px #ff6a00;
+}
+
+#sub-navigation {
+	text-transform: lowercase;
+}
+
+#sub-navigation li {
+	font-size: .8em;
+}
+
+#sub-navigation a {
+	color: #ff6a00;
+	margin-left: 13px;
+}
+
+#sub-navigation a:visited {
+	color: #ff6a00;
+}
+
+#sub-navigation a:hover {
+	color: #ff6a00;
+	text-decoration: none;
+	border-bottom: dotted 3px #3778a3;
+}
+
+#side-navigation {
+	width: 150px;
+	height: 100%;
+	float: left;
+	overflow: hidden;
+	display: block;
+	border-right: dashed 1px #ff6a00;
+	border-bottom: dashed 1px #ff6a00;
+	margin-right: 1em;
+	margin-bottom: 1em;
+}
+
+#side-navigation ul {
+	padding-top: 1em;
+	padding-left: .75em;
+	margin-top: 0;
+	margin-left: 1em;
+	margin-right: 1em;
+	list-style-type: none;
+}
+
+#side-navigation li {
+	font-size: .8em;
+}
+
+#side-navigation a {
+	color: #ff6a00;
+}
+
+/* content
+----------------------------------------------- */
+
+#content {
+	padding: 0;
+	text-align: left;
+	margin: 0 auto;
+	margin-top: 0;
+	margin-bottom: 0;
+	width: 727px;
+}
+
+#main-content {
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+#company-news {
+	width: 190px;
+	height: 100%;
+	float: right;
+	display: inline-block;
+	height: 100%;
+	padding-top: 1em;
+	border-left: dashed 1px #ff6a00;
+	clear: left;
+}
+
+#company-news ul {
+	padding-left: .75em;
+	margin-left: 1em;
+	margin-right: 1em;
+	list-style-type: circle;
+	list-style-position: outside;
+}
+
+#products-column, #services-column {
+	border-right: dashed 1px #aaaaaa;
+}
+
+#about-company {
+	width: 500px;
+}
+
+#columns {
+	height: 100%;
+	display: table;
+}
+
+.main-column {
+	width: 175px;
+	height: 100%;
+	float: left;
+	overflow: hidden;
+}
+
+/* IE 6/7 don't understand this */
+.main-column:not([className="main-column"]) {
+	display: table-cell;
+	float: none;
+}
+/* ---------------------------- */
+
+.main-column h2 {
+	color: #ff6a00;
+	text-align: center;
+}
+
+#company-news p, .main-column p, #company-news h2, .main-column h2 {
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+#company-news p, .main-column p {
+	text-align: justify;
+}
+
+.date, .info, .page-updated {
+	color: #999999;
+	font-family: Trebuchet MS, Arial, Verdana, Sans-Serif;
+	font-size: 78%;
+	letter-spacing: .2em;
+	line-height: 1.4em;
+	text-transform: uppercase;
+}
+
+.page-updated {
+	text-align: right;
+	margin-right: 1em;
+}
+
+/* products
+----------------------------------------------- */
+
+img.button {
+	clear: right;
+	float: right;
+	margin: .5em 1em .5em 1em;
+}
+
+#products {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+#products li {
+	border: solid 1px #3778a3;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	padding-bottom: 1em;
+}
+
+#products li li {
+	border-width: 0;
+	margin: 0;
+	padding: 0;
+}
+
+#products h2 {
+	color: #ffffff;
+	background-color: #3778a3;
+	padding: 4px 2px 4px 2px;
+}
+
+#products p {
+	margin-bottom: 0;
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+#products form {
+	float: right;
+	margin-top: 1em;
+	margin-right: 1em;
+}
+
+#products .price {
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #ff0000;
+}
+
+#products .header-links {
+	float: right;
+	margin-right: 1em;
+}
+
+#products .header-links a {
+	color: #ffffff;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+#products .header-links a:hover {
+	text-decoration: underline;
+}
+
+/* footer
+----------------------------------------------- */
+
+#footer {
+	width: 727px;
+	clear: both;
+	margin: 0 auto;
+	border-top: 1px solid #aaaaaa;
+}
+
+#footer a {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.link-break {
+	color: #ff6a00;
+	font-size: 1.3em;
+}
+
+/***************************************************************
+  C# Formatting
+  http://www.manoli.net/csharpformat/
+*/
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: Consolas, "Courier New", Courier, Monospace;
+	background-color: #ffffff;
+	overflow: auto;
+	/*white-space: pre;*/
+}
+
+.csharpcode pre { margin: 0em; }
+
+.csharpcode .rem { color: #008000; }
+
+.csharpcode .kwrd { color: #0000ff; }
+
+.csharpcode .str { color: #006080; }
+
+.csharpcode .op { color: #0000c0; }
+
+.csharpcode .preproc { color: #cc6633; }
+
+.csharpcode .asp { background-color: #ffff00; }
+
+.csharpcode .html { color: #800000; }
+
+.csharpcode .attr { color: #ff0000; }
+
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+
+.csharpcode .lnum { color: #606060; }
+
+/* form
+----------------------------------------------- */
+
+#send-email address {
+	white-space: pre;
+	margin-bottom: 20px;
+}
+
+#send-email label, #send-email optgroup {
+	color: #3778A3;
+	font-family: Arial Black;
+	font-weight: bold;
+}
+
+#send-email option {
+	color: #ff6a00;
+	font-weight: normal;
+	font-family: Trebuchet MS, Arial, Verdana, Sans-Serif;
+}
+
+#send-email .input {
+	margin-bottom: 1em;
+	width: 400px;
+	font-family: Trebuchet MS, Arial, Verdana, Sans-Serif;
+	color: #ff6a00;
+}
+
+#send-email .error,
+#send-email .notice, 
+#send-email .success    { border: 2px solid #ddd; }
+
+#send-email .error      { background: #FBE3E4; color: #8a1f11; border-color: #FBC2C4; }
+#send-email .notice     { background: #FFF6BF; color: #514721; border-color: #FFD324; }
+#send-email .success    { background: #E6EFC2; color: #264409; border-color: #C6D880; }

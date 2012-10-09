@@ -1,0 +1,14 @@
+RewriteEngine On
+
+# xsd mapping
+RewriteRule ^/xsd/managedFusion/rewriter$	/xsd/ManagedFusionRewriterConfigurationSchema.xsd	[L]
+
+# redirect to canonical domain
+RewriteCond %{HTTP_HOST}					!^managedfusion\.com		[NC]
+RewriteRule ^(.*)							http://managedfusion.com$1	[R=301]
+
+# rewrite url to include a trailing slash if one is missing
+#RewriteRule ^/(([^/]+/)*([^/.]+))$			/$1/					[R=301]
+
+# my resume
+RewriteRule /resume/?						http://careers.stackoverflow.com/cv/837/export/pdf-preview [R=302]
