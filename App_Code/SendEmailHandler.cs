@@ -19,10 +19,23 @@ public class SendEmailHandler : IHttpHandler
 			context.Response.Redirect(HttpStatusCode.Found, "http://spammerbegone.com");
 		else {
 			using (MailMessage message = new MailMessage())
+			using (SmtpClient smtp = new SmtpClient())
 			{
+				string smtpHost = WebConfigurationManager.AppSettings["Smtp:Host"];
+				int smtpPort = Convert.ToInt32(WebConfigurationManager.AppSettings["Smtp:Port"]);
+				string smtpUsername = WebConfigurationManager.AppSettings["Smtp:Username"];
+				string smtpPassword = WebConfigurationManager.AppSettings["Smtp:Password"];
+			
+				var creds = new NetworkCredential(smtpUsername, smtpPassword);
+				var auth = creds.GetCredential(smtpHost, smtpPort, "Basic");
+			
+				smtp.Host = smtpHost;
+				smtp.Port = smtpPort;
+				smtp.Credentials = auth;
+			
 				string contactName = context.Request.Form["contact-name"];
 				string contactEmail = context.Request.Form["contact-email"];
-
+				
 				message.To.Add(new MailAddress(WebConfigurationManager.AppSettings["InfoEmail"], "Managed Fusion"));
 				message.To.Add(new MailAddress(contactEmail, contactName));
 				message.From = new MailAddress(WebConfigurationManager.AppSettings["NoReplyEmail"], "Managed Fusion No Reply");
@@ -35,8 +48,7 @@ public class SendEmailHandler : IHttpHandler
 
 				foreach (string id in context.Request.Form.AllKeys)
 					message.Body += id + ":" + Environment.NewLine + context.Request.Form[id] + Environment.NewLine + Environment.NewLine;
-
-				SmtpClient smtp = new SmtpClient();
+					
 				smtp.Send(message);
 			}
 
